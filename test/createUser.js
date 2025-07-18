@@ -8,7 +8,7 @@ describe('CREATE User', () => {
   it('should return 201 for valid new user', async () => {
     const newUser = {
       name: 'Salsabila',
-      email: `salsabila${Date.now()}@test.com`,
+      email: `salsabila${Date.now()}@example.com`,
       gender: 'female',
       status: 'inactive',
     };
