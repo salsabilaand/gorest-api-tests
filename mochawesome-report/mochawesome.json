@@ -5,9 +5,9 @@
     "passes": 5,
     "pending": 0,
     "failures": 0,
-    "start": "2025-07-17T23:36:36.459Z",
-    "end": "2025-07-17T23:36:40.846Z",
-    "duration": 4387,
+    "start": "2025-07-18T03:12:24.676Z",
+    "end": "2025-07-18T03:12:28.698Z",
+    "duration": 4022,
     "testsRegistered": 5,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3f352bf7-e219-4585-bea9-a1335cc41614",
+      "uuid": "e87b59ca-96c4-4208-87c6-5fef19b0084d",
       "title": "",
       "fullFile": "C:\\Users\\Salsabila\\VSCode\\gorest\\test\\crudUser.js",
       "file": "\\test\\crudUser.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c47b4baa-5362-4f7c-855a-46e000c98cac",
+          "uuid": "d8c07fa4-bdb0-4551-8607-20c2ba6681d4",
           "title": "User API Tests (GoREST)",
           "fullFile": "C:\\Users\\Salsabila\\VSCode\\gorest\\test\\crudUser.js",
           "file": "\\test\\crudUser.js",
@@ -38,7 +38,7 @@
               "title": "should return 201 for valid new user",
               "fullTitle": "User API Tests (GoREST) should return 201 for valid new user",
               "timedOut": false,
-              "duration": 1214,
+              "duration": 821,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const newUser = {\n  name: \"Salsabila\",\n  email: `salsabila.${Date.now()}@example.com`,\n  gender: \"female\",\n  status: \"active\"\n};\nconst response = await request(baseUrl)\n  .post('/users')\n  .set('Authorization', authToken)\n  .send(newUser);\nconsole.log('CREATE RESPONSE:', response.body);\nexpect(response.status).to.equal(201);\nexpect(response.body).to.have.property(\"id\");\nuserId = response.body.id;",
               "err": {},
-              "uuid": "04a2d68d-0508-4379-9482-d4070045b98d",
-              "parentUUID": "c47b4baa-5362-4f7c-855a-46e000c98cac",
+              "uuid": "24280dc7-aa6a-4888-b5c7-add421cfaf7d",
+              "parentUUID": "d8c07fa4-bdb0-4551-8607-20c2ba6681d4",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "should return 422 when creating user without email",
               "fullTitle": "User API Tests (GoREST) should return 422 when creating user without email",
               "timedOut": false,
-              "duration": 496,
+              "duration": 831,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const newUser = {\n  name: \"Invalid User\",\n  gender: \"male\",\n  status: \"active\"\n};\nconst response = await request(baseUrl)\n  .post('/users')\n  .set('Authorization', authToken)\n  .send(newUser);\nconsole.log('CREATE NEGATIVE RESPONSE:', response.body);\nexpect(response.status).to.equal(422);\nexpect(response.body[0]).to.have.property(\"field\", \"email\");",
               "err": {},
-              "uuid": "178b70d6-eb5e-43e3-90b8-fa518e8ce846",
-              "parentUUID": "c47b4baa-5362-4f7c-855a-46e000c98cac",
+              "uuid": "ebe37cc0-58e7-4920-a589-901de59ffff5",
+              "parentUUID": "d8c07fa4-bdb0-4551-8607-20c2ba6681d4",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "should return 200 on get created user details",
               "fullTitle": "User API Tests (GoREST) should return 200 on get created user details",
               "timedOut": false,
-              "duration": 1031,
+              "duration": 843,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -83,8 +83,8 @@
               "context": null,
               "code": "const response = await request(baseUrl)\n  .get(`/users/${userId}`)\n  .set('Authorization', authToken);\nconsole.log('GET RESPONSE:', response.body);\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property(\"id\", userId);",
               "err": {},
-              "uuid": "ccf68d34-50cd-4530-949c-4b6de52ef0c3",
-              "parentUUID": "c47b4baa-5362-4f7c-855a-46e000c98cac",
+              "uuid": "d1df8c24-8cac-42d7-8f5f-550b43da85fc",
+              "parentUUID": "d8c07fa4-bdb0-4551-8607-20c2ba6681d4",
               "isHook": false,
               "skipped": false
             },
@@ -92,7 +92,7 @@
               "title": "should return 200 on update user",
               "fullTitle": "User API Tests (GoREST) should return 200 on update user",
               "timedOut": false,
-              "duration": 1027,
+              "duration": 696,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -101,8 +101,8 @@
               "context": null,
               "code": "const updatedData = {\n  name: \"Salsabila Updated\",\n  status: \"inactive\"\n};\nconst response = await request(baseUrl)\n  .put(`/users/${userId}`)\n  .set('Authorization', authToken)\n  .send(updatedData);\nconsole.log('UPDATE RESPONSE:', response.body);\nexpect(response.status).to.equal(200);\nexpect(response.body).to.have.property(\"name\", \"Salsabila Updated\");",
               "err": {},
-              "uuid": "85674661-f136-4bff-861c-71474b8ecffb",
-              "parentUUID": "c47b4baa-5362-4f7c-855a-46e000c98cac",
+              "uuid": "be072b73-d548-437c-8eb7-3c7d573d10f4",
+              "parentUUID": "d8c07fa4-bdb0-4551-8607-20c2ba6681d4",
               "isHook": false,
               "skipped": false
             },
@@ -110,7 +110,7 @@
               "title": "should return 204 on delete user",
               "fullTitle": "User API Tests (GoREST) should return 204 on delete user",
               "timedOut": false,
-              "duration": 602,
+              "duration": 818,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -119,27 +119,27 @@
               "context": null,
               "code": "const response = await request(baseUrl)\n  .delete(`/users/${userId}`)\n  .set('Authorization', authToken);\nconsole.log('DELETE RESPONSE:', response.status);\nexpect(response.status).to.equal(204);",
               "err": {},
-              "uuid": "dc08729c-1c86-4a5e-abbd-20e8f3616782",
-              "parentUUID": "c47b4baa-5362-4f7c-855a-46e000c98cac",
+              "uuid": "aa21985a-fc2b-4169-b585-743b707e95de",
+              "parentUUID": "d8c07fa4-bdb0-4551-8607-20c2ba6681d4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "04a2d68d-0508-4379-9482-d4070045b98d",
-            "178b70d6-eb5e-43e3-90b8-fa518e8ce846",
-            "ccf68d34-50cd-4530-949c-4b6de52ef0c3",
-            "85674661-f136-4bff-861c-71474b8ecffb",
-            "dc08729c-1c86-4a5e-abbd-20e8f3616782"
+            "24280dc7-aa6a-4888-b5c7-add421cfaf7d",
+            "ebe37cc0-58e7-4920-a589-901de59ffff5",
+            "d1df8c24-8cac-42d7-8f5f-550b43da85fc",
+            "be072b73-d548-437c-8eb7-3c7d573d10f4",
+            "aa21985a-fc2b-4169-b585-743b707e95de"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4370,
+          "duration": 4009,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 2000
+          "_timeout": 10000
         }
       ],
       "passes": [],
@@ -149,7 +149,7 @@
       "duration": 0,
       "root": true,
       "rootEmpty": true,
-      "_timeout": 2000
+      "_timeout": 10000
     }
   ],
   "meta": {
