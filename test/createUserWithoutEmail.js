@@ -11,7 +11,7 @@ describe('NEGATIVE: Create User Without Email (GoREST)', () => {
       name: "Salsa",
       gender: "female",
       status: "active"
-      // Missing 'email' on purpose
+      // Missing 'email'
     };
 
     const response = await request(baseUrl)
